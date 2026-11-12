@@ -17,13 +17,6 @@
   --font-Oxanium-Medium: "Oxanium-Medium", var(--font-body);
 }
 @font-face {
-  font-family: "ZaoZiGongFangYueYuan";
-  src: url("/fonts/ZaoZiGongFangYueYuan.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "Oxanium-Medium";
   src: url("/fonts/Oxanium-Medium.woff2") format("woff2");
   font-weight: 500 800;
@@ -31,25 +24,8 @@
   font-display: swap;
 }
 :root {
-  --font-body:
-    "ZaoZiGongFangYueYuan", "Noto Sans SC Variable", "Noto Sans Variable",
-    "Noto Sans JP Variable", sans-serif;
-  --font-code:
-    "JetBrains Mono Variable", "Noto Sans SC Variable", "Noto Sans JP Variable",
-    monospace;
-}
-:root:lang(en) {
-  --font-body:
-    "Noto Sans Variable", "Noto Sans JP Variable", "Noto Sans SC Variable",
-    sans-serif;
-}
-:root:lang(ja) {
-  --font-code:
-    "JetBrains Mono Variable", "Noto Sans JP Variable", "Noto Sans SC Variable",
-    monospace;
-  --font-body:
-    "Noto Sans JP Variable", "Noto Sans Variable", "Noto Sans SC Variable",
-    sans-serif;
+  --font-body: "Noto Sans Variable", sans-serif;
+  --font-code: "JetBrains Mono Variable", monospace;
 }
 * {
   box-sizing: border-box;
