@@ -85,7 +85,13 @@ const canonical = new URL(Astro.url.pathname, siteInfo.url);
           theme = localStorage.getItem("theme");
           preset = localStorage.getItem("preset");
         } catch {}
-        document.documentElement.dataset.preset = preset || "kanade-original";
+        const validPresets = ["kanade-original", "dark-homelab", "custom"];
+        const selectedPreset = preset || "";
+        document.documentElement.dataset.preset = validPresets.includes(
+          selectedPreset,
+        )
+          ? selectedPreset
+          : "kanade-original";
         document.documentElement.classList.toggle(
           "dark",
           theme === "dark" ||

@@ -3,7 +3,7 @@ import { t } from "../../i18n";
 import { ref, onMounted, onUnmounted } from "vue";
 import { headerConfig } from "../../config";
 import { initTheme, toggleTheme } from "../../scripts/theme";
-import { visualPresets } from "../../themes/presets";
+import { isVisualPreset, visualPresets } from "../../themes/presets";
 const props = defineProps<{ pathname: string }>();
 const isDark = ref(false);
 const preset = ref("kanade-original");
@@ -24,7 +24,11 @@ const setPreset = () => {
   const next = visualPresets[(currentIndex + 1) % visualPresets.length];
   preset.value = next;
   document.documentElement.dataset.preset = next;
-  localStorage.setItem("preset", next);
+  try {
+    localStorage.setItem("preset", next);
+  } catch {
+    // Keep the current preset active when browser storage is unavailable.
+  }
 };
 const openSearch = () => {
   menuOpen.value = false;
@@ -35,7 +39,12 @@ const handleKey = (event: KeyboardEvent) => {
 };
 onMounted(() => {
   isDark.value = initTheme() === "dark";
-  preset.value = localStorage.getItem("preset") || "kanade-original";
+  try {
+    const storedPreset = localStorage.getItem("preset");
+    if (isVisualPreset(storedPreset)) preset.value = storedPreset;
+  } catch {
+    // Use the default preset when browser storage is unavailable.
+  }
   document.documentElement.dataset.preset = preset.value;
   handleScroll();
   window.addEventListener("scroll", handleScroll, { passive: true });
