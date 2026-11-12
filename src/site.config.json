@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Edgerunr Blog",
-    "logoText": "Edgeruner",
+    "logoText": "Edgerunner",
     "favicon": "/favicon.svg",
     "keywords": ["homelab", "privacy", "self-hosting", "personal blog"]
   },
