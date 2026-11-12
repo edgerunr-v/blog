@@ -1,0 +1,24 @@
+:root[data-preset="dark-homelab"] {
+  --bg: #0b1220;
+  --card: #121d2e;
+  --text: #dce8f5;
+  --muted: #91a5ba;
+  --accent: #52d6c5;
+  --accent-soft: #123b45;
+  --line: #244052;
+  --shadow: 0 8px 28px #00000035;
+  --hero-image:
+    radial-gradient(circle at 20% 30%, #52d6c555 0 2px, transparent 3px),
+    linear-gradient(135deg, #07111f 0%, #12334a 48%, #07131d 100%);
+  color-scheme: dark;
+}
+
+:root.dark[data-preset="dark-homelab"] {
+  --bg: #070d17;
+  --card: #101a29;
+  --text: #e4f4f1;
+  --muted: #9ab5bd;
+  --accent: #68e5d0;
+  --accent-soft: #123b45;
+  --line: #244052;
+}
