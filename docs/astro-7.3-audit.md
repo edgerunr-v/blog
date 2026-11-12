@@ -56,7 +56,6 @@ TypeScript 的 npm 稳定版为 7.0.2，但 `@astrojs/check@0.9.10` 的 peer dep
 | 格式与行尾         | Prettier / Astro 插件、EditorConfig、Git LF 约束，统一格式                                                                  |
 | 安装               | 图标依赖替换为当前使用的 8 个独立图标集；冻结锁文件可安装；仅允许 esbuild 安装脚本                                          |
 | 构建与测试         | 构建先同步类型并运行 Astro / Vue 检查；测试先构建；浏览器测试不复用可能过期的预览服务                                       |
-| CI                 | 加入安装、格式、安全审计、类型检查、构建和桌面 / 手机浏览器测试                                                             |
 
 ## 安全审计
 
@@ -73,7 +72,7 @@ TypeScript 的 npm 稳定版为 7.0.2，但 `@astrojs/check@0.9.10` 的 peer dep
 - 依赖安全审计和源码格式检查。
 - 冻结锁文件安装及 Windows 后台预览入口。
 
-本次检查针对本地源码与实际构建、浏览器表现。当前环境没有 Docker CLI，未运行容器镜像构建；新增 GitHub Actions 也需要推送后才能在远程执行。手机测试采用 Chromium 的设备模拟，未在真实 iPhone / Safari 上执行。不将这些尚未执行的环境检查描述为已通过。
+本次检查针对本地源码与实际构建、浏览器表现。当前环境没有 Docker CLI，未运行容器镜像构建。手机测试采用 Chromium 的设备模拟，未在真实 iPhone / Safari 上执行。不将这些尚未执行的环境检查描述为已通过。
 
 正式部署仍须设置实际 SITE_URL 并重新构建。默认 localhost 地址仅用于本地开发。当前留言仍为浏览器本地存储；站点内容配置仍采用 src/config.ts，尚未迁移为单个 JSON 文件。
 
