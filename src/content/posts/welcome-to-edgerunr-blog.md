@@ -23,3 +23,9 @@ Some posts will be polished guides; others will be notes from experiments that m
 ## Starting small
 
 This is the first post, so the blog is still intentionally simple. I will improve the setup as I use it, document what works, and keep the posts practical.
+
+<br><br>
+PS: Yes my name (edgerunr-v) is inspired by the game Cyberpunk 2077 and its main character V.
+
+
+
