@@ -1,0 +1,25 @@
+:root,
+:root[data-preset="kanade-original"] {
+  --bg: #fff1f1;
+  --card: #fff;
+  --text: #4c4551;
+  --muted: #938791;
+  --accent: #d85d7e;
+  --accent-soft: #fff0f4;
+  --line: #f3e9ed;
+  --shadow: 0 5px 24px #88566a06;
+  --hero-image: url("/images/hero.webp");
+  color-scheme: light;
+}
+
+:root.dark[data-preset="kanade-original"] {
+  --bg: #111520;
+  --card: #202534;
+  --text: #e4deeb;
+  --muted: #aaa2b9;
+  --accent: #f0a2bc;
+  --accent-soft: #343044;
+  --line: #343646;
+  --shadow: 0 5px 24px #00000012;
+  color-scheme: dark;
+}

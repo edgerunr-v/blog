@@ -1,0 +1,59 @@
+{
+  "site": {
+    "name": "Edgerunr Blog",
+    "logoText": "Edgeruner",
+    "favicon": "/favicon.svg",
+    "keywords": ["homelab", "privacy", "self-hosting", "personal blog"]
+  },
+  "author": {
+    "name": "edgerunr-v",
+    "handle": "edgerunr-v",
+    "avatar": "/images/sakurajima_mai_pfp.jpg",
+    "github": "https://github.com/edgerunr-v"
+  },
+  "hero": { "image": "/images/hero.webp" },
+  "navigation": [
+    { "label": "nav.home", "icon": "icon-[bx--bxs-home-circle]", "url": "/" },
+    {
+      "label": "nav.posts",
+      "icon": "icon-[material-symbols--article]",
+      "url": "/posts/"
+    },
+    {
+      "label": "nav.messages",
+      "icon": "icon-[basil--comment-solid]",
+      "url": "/messages/"
+    },
+    {
+      "label": "nav.friends",
+      "icon": "icon-[mingcute--link-3-line]",
+      "url": "/friends/"
+    },
+    {
+      "label": "nav.about",
+      "icon": "icon-[mynaui--indifferent-ghost-solid]",
+      "url": "/about/"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "label": "",
+      "icon": "icon-[jam--github]",
+      "url": "$author.github"
+    },
+    {
+      "name": "RSS",
+      "label": "common.rss",
+      "icon": "icon-[lucide--rss]",
+      "url": "/rss.xml"
+    },
+    {
+      "name": "Guestbook",
+      "label": "common.guestbook",
+      "icon": "icon-[lucide--mail]",
+      "url": "/messages/"
+    }
+  ],
+  "text": {}
+}
