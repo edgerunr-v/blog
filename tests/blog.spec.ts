@@ -103,11 +103,24 @@ test("Visual preset and dark mode persist across reloads", async ({ page }) => {
     "data-preset",
     "dark-homelab",
   );
+  const darkHomelabBackground = await page.evaluate(() =>
+    getComputedStyle(document.documentElement).getPropertyValue("--bg"),
+  );
+  expect(darkHomelabBackground.trim()).toBe("#0b1220");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute(
     "data-preset",
     "dark-homelab",
   );
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        getComputedStyle(document.documentElement)
+          .getPropertyValue("--bg")
+          .trim(),
+      ),
+    )
+    .toBe("#0b1220");
   await page.getByRole("button", { name: t("nav.dark") }).click();
   await expect(page.locator("html")).toHaveClass(/dark/);
   await page.reload();
