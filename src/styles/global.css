@@ -396,6 +396,28 @@ a.chip:hover {
 }
 .prose img {
   border-radius: 12px;
+  max-height: 75vh;
+  width: auto;
+  margin-inline: auto;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 14px;
+}
+.prose th,
+.prose td {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+.prose th {
+  background: var(--accent-soft);
+  font-weight: 650;
+}
+.prose td:first-child {
+  font-weight: 650;
 }
 @media (min-width: 1440px) {
   .shell {
