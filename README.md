@@ -32,7 +32,27 @@ The static output is written to `dist/`.
 
 Create English Markdown posts in
 [`src/content/posts/`](src/content/posts/). The required frontmatter is
-documented in [`src/content.config.ts`](src/content.config.ts).
+validated by [`src/content.config.ts`](src/content.config.ts). Copy
+[`src/content/posts/_template.md`](src/content/posts/_template.md), replace
+the example values, and delete any optional fields you do not need. The
+leading underscore keeps the template out of the generated posts.
+
+### Post frontmatter
+
+| Field         | Required | Values and purpose                                                                                                                 |
+| ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | Yes      | The post title.                                                                                                                    |
+| `description` | Yes      | A short summary used on cards and in metadata.                                                                                     |
+| `date`        | Yes      | Publication date in `YYYY-MM-DD` format.                                                                                           |
+| `lang`        | No       | `en` (the only currently supported language); defaults to `en`.                                                                    |
+| `category`    | Yes      | One of `homelab`, `local-ai`, `dev-notes`, or `thoughts`.                                                                          |
+| `tags`        | Yes      | A list of free-form strings. Tags do not need to be registered.                                                                    |
+| `cover`       | Yes      | One of `astro`, `vue`, `css`, `notes`, `life`, `typescript`, `git`, or `design`; or an image path such as `/images/my-cover.webp`. |
+| `featured`    | No       | `true` highlights the post and changes its cover treatment; defaults to `false`.                                                   |
+| `draft`       | No       | `true` hides the post from the site; defaults to `false`.                                                                          |
+
+The template contains all supported fields with inline explanations. Do not
+remove the required fields unless the schema is changed as well.
 
 ## Configuration
 
