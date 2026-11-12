@@ -8,7 +8,7 @@ category: homelab
 tags: ["Homelab", "Hardware"]
 cover: notes
 featured: true
-draft: false
+draft: true
 ---
 Hey Choom!
 
