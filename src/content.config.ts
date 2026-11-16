@@ -26,6 +26,14 @@ const posts = defineCollection({
     ]),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
+    edits: z
+      .array(
+        z.object({
+          date: z.coerce.date(),
+          note: z.string().trim().min(1),
+        }),
+      )
+      .default([]),
   }),
 });
 export const collections = { posts };

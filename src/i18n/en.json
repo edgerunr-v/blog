@@ -110,6 +110,7 @@
   "article.readingTime": "About {count} min",
   "article.toc": "On this page",
   "article.thanks": "Thank you for reading. I hope these words were useful.",
+  "article.edit": "edit",
   "article.share": "Copy post link",
   "article.shared": "Link copied. Share it with someone who enjoys a good story.",
   "article.shareFallback": "Please copy this link: {url}",
