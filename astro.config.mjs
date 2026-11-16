@@ -1,9 +1,11 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
 import tailwindcss from "@tailwindcss/vite";
 import { loadEnv } from "vite";
+import remarkCallouts from "./src/lib/remark-callouts.ts";
 
 const { SITE_URL = "https://blog.edgerunr-v.com" } = loadEnv(
   process.env.NODE_ENV ?? "production",
@@ -40,6 +42,11 @@ export default defineConfig({
         ),
     }),
   ],
+  markdown: {
+    processor: unified({
+      remarkPlugins: [remarkCallouts],
+    }),
+  },
   vite: {
     plugins: [tailwindcss()],
   },

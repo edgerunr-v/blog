@@ -36,6 +36,16 @@ test("Post page renders metadata and generated cover", async ({ page }) => {
   );
 });
 
+test("Post renders Obsidian-style callout blocks", async ({ page }) => {
+  await page.goto(postPath);
+  const tip = page.locator(".callout-tip");
+  await expect(tip).toBeVisible();
+  await expect(tip).toContainText("A quick tip");
+  const folded = page.locator(".callout-note.callout-fold");
+  await expect(folded).toBeVisible();
+  await expect(folded.locator("summary")).toContainText("Click to expand");
+});
+
 test("Site is English-only and exposes current metadata", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("html")).toHaveAttribute("lang", language);
