@@ -54,6 +54,29 @@ leading underscore keeps the template out of the generated posts.
 The template contains all supported fields with inline explanations. Do not
 remove the required fields unless the schema is changed as well.
 
+### Callout blocks
+
+Posts support Obsidian-style callout blocks. Write them as blockquotes whose
+first line starts with a `[!type]` marker; the text after the marker becomes
+the title (it defaults to the type name):
+
+```md
+> [!note]
+> A simple note block.
+
+> [!warning] Custom title
+> The body can use regular Markdown.
+
+> [!tip]- Collapsed by default
+> Add `-` or `+` after the closing bracket to make the block collapsible
+> (`-` starts it collapsed).
+```
+
+Available types: `note`, `info`, `tip`, `success`, `question`, `warning`,
+`danger`, `failure`, `bug`, `example`, and `quote`. Any other name works too
+and falls back to the default styling. Regular blockquotes that do not start
+with a `[!type]` marker keep their normal quote styling.
+
 ## Configuration
 
 Site identity, author details, navigation, and social links are configured in

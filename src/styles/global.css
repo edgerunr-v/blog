@@ -361,6 +361,74 @@ a.chip:hover {
   background: var(--accent-soft);
   border-radius: 0 10px 10px 0;
 }
+.prose .callout {
+  --callout: var(--accent);
+  margin: 24px 0;
+  padding: 14px 18px 12px;
+  border: 1px solid color-mix(in srgb, var(--callout) 25%, var(--line));
+  border-left: 3px solid var(--callout);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--callout) 7%, var(--card));
+}
+.callout-note {
+  --callout: var(--accent);
+}
+.callout-info {
+  --callout: #4c86dd;
+}
+.callout-tip,
+.callout-success {
+  --callout: #3f9d63;
+}
+.callout-warning {
+  --callout: #c98a1b;
+}
+.callout-danger,
+.callout-failure {
+  --callout: #d4544f;
+}
+.callout-question {
+  --callout: #8f6bd8;
+}
+.callout-bug {
+  --callout: #d4569c;
+}
+.callout-example {
+  --callout: #6d7887;
+}
+.callout-quote {
+  --callout: var(--muted);
+}
+.prose .callout-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--callout);
+  cursor: default;
+}
+.prose .callout-fold > summary.callout-title {
+  cursor: pointer;
+  list-style: none;
+}
+.prose .callout-fold > summary.callout-title::-webkit-details-marker {
+  display: none;
+}
+.prose .callout-chevron {
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+.prose .callout-fold[open] > summary .callout-chevron {
+  transform: rotate(90deg);
+}
+.prose .callout > :last-child {
+  margin-bottom: 0;
+}
+.prose .callout > .callout-title + * {
+  margin-top: 0;
+}
 .prose :not(pre) > code {
   background: var(--accent-soft);
   color: var(--accent);
