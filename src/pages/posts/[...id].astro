@@ -83,6 +83,23 @@ const older = posts[index + 1];
         <span>✿</span>
         <p>{t("article.thanks")}</p>
       </div>
+      {post.data.edits.length > 0 && (
+        <div class="edit-history" id="edit-history">
+          <ul>
+            {[...post.data.edits]
+              .sort((a, b) => b.date.valueOf() - a.date.valueOf())
+              .map((edit) => (
+                <li>
+                  <span class="edit-label">{t("article.edit")}:</span>
+                  <time datetime={edit.date.toISOString().slice(0, 10)}>
+                    {formatDate(edit.date)}
+                  </time>
+                  <span class="edit-note">{edit.note}</span>
+                </li>
+              ))}
+          </ul>
+        </div>
+      )}
       <div class="article-tools">
         <div class="article-tags">
           {post.data.tags.map((tag) => (
@@ -331,6 +348,29 @@ const older = posts[index + 1];
   .article-ending > span {
     color: var(--accent);
     font-size: 26px;
+  }
+  .edit-history {
+    margin: 0 0 12px;
+  }
+  .edit-history ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .edit-history li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    margin: 5px 0;
+  }
+  .edit-history .edit-label {
+    color: var(--accent);
+  }
+  .edit-history .edit-note {
+    color: var(--text);
   }
   .article-tools {
     display: flex;

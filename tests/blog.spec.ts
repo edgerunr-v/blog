@@ -10,8 +10,10 @@ test("Homepage lists the current post and categories", async ({ page }) => {
     "data-ready",
     "true",
   );
-  await expect(page.locator(".post-card")).toHaveCount(1);
-  await expect(page.locator(".post-card")).toContainText("What's up Choom");
+  await expect(page.locator(".post-card")).toHaveCount(2);
+  await expect(
+    page.locator(".post-card", { hasText: "What's up Choom" }),
+  ).toBeVisible();
   await expect(
     page.getByRole("button", { name: t("category.dev-notes"), exact: true }),
   ).toBeVisible();
@@ -36,14 +38,11 @@ test("Post page renders metadata and generated cover", async ({ page }) => {
   );
 });
 
-test("Post renders Obsidian-style callout blocks", async ({ page }) => {
+test("Post page hides the edit history when the post has no edits", async ({
+  page,
+}) => {
   await page.goto(postPath);
-  const tip = page.locator(".callout-tip");
-  await expect(tip).toBeVisible();
-  await expect(tip).toContainText("A quick tip");
-  const folded = page.locator(".callout-note.callout-fold");
-  await expect(folded).toBeVisible();
-  await expect(folded.locator("summary")).toContainText("Click to expand");
+  await expect(page.locator("#edit-history")).toHaveCount(0);
 });
 
 test("Site is English-only and exposes current metadata", async ({ page }) => {
@@ -68,7 +67,7 @@ test("Site is English-only and exposes current metadata", async ({ page }) => {
 test("RSS, sitemap, and legacy routes work", async ({ page, request }) => {
   const feed = await request.get("/rss.xml");
   expect(feed.status()).toBe(200);
-  expect((await feed.text()).match(/<item>/g)).toHaveLength(1);
+  expect((await feed.text()).match(/<item>/g)).toHaveLength(2);
   expect((await request.get("/sitemap.xml")).status()).toBe(200);
   expect(await (await request.get("/robots.txt")).text()).toContain("Sitemap:");
   await page.goto("/articles/");

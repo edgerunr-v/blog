@@ -27,6 +27,16 @@ featured: false
 
 # Optional: keeps the post out of the site until you are ready to publish it.
 draft: false
+edits:
+  - date: 2026-11-14
+    note: "Added a cover image"
+# Optional: notes about what changed after publishing (a new cover, a
+# restyle, a config update, …). Each entry needs a date (YYYY-MM-DD) and a
+# short note; they render as small "edit: …" lines at the bottom of the post.
+# Uncomment and add one line per edit:
+# edits:
+#   - date: 2026-01-02
+#     note: "Added a new post cover"
 ---
 
 Write your post here. Delete this example text and replace it with Markdown.
