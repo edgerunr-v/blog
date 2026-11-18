@@ -1,0 +1,25 @@
+:root[data-preset="warm-paper"] {
+  --bg: #faf6f0;
+  --card: #fffdf9;
+  --text: #3d3833;
+  --muted: #8a7f72;
+  --accent: #ad5f38;
+  --accent-soft: #f5e8dd;
+  --line: #e8ddd0;
+  --shadow: 0 5px 20px #5b4a3a0e;
+  --hero-image: linear-gradient(135deg, #e8d5bc 0%, #cfa77e 48%, #a98a68 100%);
+  color-scheme: light;
+}
+
+:root.dark[data-preset="warm-paper"] {
+  --bg: #17130f;
+  --card: #221c16;
+  --text: #ece4d9;
+  --muted: #9c8f7d;
+  --accent: #d99a6c;
+  --accent-soft: #33291f;
+  --line: #3a3128;
+  --shadow: 0 6px 24px #00000030;
+  --hero-image: linear-gradient(135deg, #241c13 0%, #4a3a28 48%, #2a2118 100%);
+  color-scheme: dark;
+}
