@@ -2,6 +2,9 @@
 @import "../themes/kanade-original.css";
 @import "../themes/dark-homelab.css";
 @import "../themes/custom.css";
+@import "../themes/slate-professional.css";
+@import "../themes/warm-paper.css";
+@import "../themes/forest.css";
 @plugin "@iconify/tailwind4";
 @custom-variant dark (&:where(.dark, .dark *));
 

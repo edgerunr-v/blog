@@ -2,6 +2,9 @@ export const visualPresets = [
   "kanade-original",
   "dark-homelab",
   "custom",
+  "slate-professional",
+  "warm-paper",
+  "forest",
 ] as const;
 
 export type VisualPreset = (typeof visualPresets)[number];

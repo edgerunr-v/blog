@@ -1,0 +1,25 @@
+:root[data-preset="forest"] {
+  --bg: #f2f5f3;
+  --card: #ffffff;
+  --text: #2a3630;
+  --muted: #6e7f76;
+  --accent: #3d7a5c;
+  --accent-soft: #e3efe8;
+  --line: #d8e2dc;
+  --shadow: 0 5px 20px #2f4a3c0d;
+  --hero-image: linear-gradient(135deg, #2e5c45 0%, #5c8a6e 48%, #a8c4b0 100%);
+  color-scheme: light;
+}
+
+:root.dark[data-preset="forest"] {
+  --bg: #101713;
+  --card: #1a241e;
+  --text: #dfe9e2;
+  --muted: #8fa398;
+  --accent: #7fbf9b;
+  --accent-soft: #24382d;
+  --line: #2c3e33;
+  --shadow: 0 6px 24px #0000002e;
+  --hero-image: linear-gradient(135deg, #10201a 0%, #24453a 48%, #14251d 100%);
+  color-scheme: dark;
+}
